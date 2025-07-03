@@ -1,6 +1,13 @@
 build:
   docker:
-    web: Dockerfile
+    worker: Dockerfile
+
+config:
+  BOT_TOKEN: ${BOT_TOKEN}  # The Telegram Bot Token that you got from @BotFather.
+  TELEGRAM_API: ${TELEGRAM_API}  # This is to authenticate your Telegram account for downloading Telegram files.
+  TELEGRAM_HASH: ${TELEGRAM_HASH}  # This is to authenticate your Telegram account for downloading Telegram files.
+  FSUB_ID: ${FSUB_ID}  # The Force Subscribe Channel, users will not be able to use your bot without joining the Channel.
+  DUMP_CHAT_ID: ${DUMP_CHAT_ID}  # The Dump Chat ID for logging or storing messages.
 
 run:
-  worker: bash start.sh
+  worker: bash start.sh  # Command to run your worker process
